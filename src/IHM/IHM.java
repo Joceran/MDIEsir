@@ -27,9 +27,9 @@ public class IHM {
 	private DeplacerCurseur deplacerCurseur;
 	private Undo undo;
 	private Redo redo;
-	private EnregistrerMacro enrMacro;
+	/*private EnregistrerMacro enrMacro;
 	private StopEnregistrementMacro stopEncrMacro;
-	private RejouerMacro rejouerMacro;
+	private RejouerMacro rejouerMacro;*/
 	
 	private String texteAInserer;
 	
@@ -69,13 +69,6 @@ public class IHM {
 		this.texteAInserer = s;
 	}
 	
-	public void setUndo(Undo undo) {
-		this.undo = undo;
-	}
-	
-	public void setRedo(Redo redo) {
-		this.redo =  redo;
-	}
 
 	public void getSelectionner(){
 		setDebut(editeur.gettA().getSelectionStart());
@@ -110,15 +103,7 @@ public class IHM {
 	public void getDeplacerCurseur() {
 		deplacerCurseur.execute();
 	}
-	
-	public void getUndo() {
-		undo.execute();
-	}
-	
-	public void getRedo() {
-		redo.execute();
-	}
-	
+
 	public void setDebut(int d){
 		this.selectionner.setDebut(d);
 	}
@@ -147,6 +132,26 @@ public class IHM {
 		editeur.gettA().setCaretPosition(pos);
 	}
 
+	
+	// Version 2
+	public void setUndo(Undo undo) {
+		this.undo = undo;
+	}
+	
+	public void setRedo(Redo redo) {
+		this.redo =  redo;
+	}
+	
+	public void getUndo() {
+		undo.execute();
+	}
+	
+	public void getRedo() {
+		redo.execute();
+	}
+	
+	/*
+	//Version 3
 	public void getEnrMacro() {
 		enrMacro.execute();;
 	}
@@ -169,5 +174,5 @@ public class IHM {
 
 	public void setRejouerMacro(RejouerMacro rejouerMacro) {
 		this.rejouerMacro = rejouerMacro;
-	}
+	}*/
 }

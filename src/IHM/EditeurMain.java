@@ -29,9 +29,9 @@ public class EditeurMain {
 		ihm.setDeplacerCurseur(new DeplacerCurseur(bf, ihm));
 		ihm.setUndo(new Undo(bf, ihm));
 		ihm.setRedo(new Redo(bf, ihm));
-		ihm.setStopEncrMacro(new StopEnregistrementMacro(bf, ihm));
+		/*ihm.setStopEncrMacro(new StopEnregistrementMacro(bf, ihm));
 		ihm.setEnrMacro(new EnregistrerMacro(bf, ihm));
-		ihm.setRejouerMacro(new RejouerMacro(bf, ihm));
+		ihm.setRejouerMacro(new RejouerMacro(bf, ihm));*/
 		
 		Editeur edt = new Editeur(ihm);
 		ihm.setEditeur(edt);

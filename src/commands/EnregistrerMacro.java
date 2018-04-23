@@ -15,7 +15,7 @@ public class EnregistrerMacro implements Command {
 	
 	public void execute() {
 		LogCommand.logBefore("Enregistrer une macro", ihm, bf);
-		bf.enregistrer();
+		//bf.enregistrer();
 		LogCommand.logAfter("Enregistrer une macro", ihm, bf);
 		
 	}

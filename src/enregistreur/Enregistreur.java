@@ -29,9 +29,9 @@ public class Enregistreur {
 		recording = false;
 	}
 	
-	public Memento  rejouer() {
+	public void  rejouer() {
 		if(!isRecording()) {
-			return bf.ge;
+			
 		}
 	}
 	

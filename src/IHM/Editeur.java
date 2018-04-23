@@ -22,7 +22,7 @@ public class Editeur extends JFrame implements ActionListener, MouseListener {
 	
 	private IHM ihm;
 	private JTextArea tA;
-	private JButton b_cut, b_copy, b_paste,b_undo, b_redo, b_enregistrer, b_stop, b_play;
+	private JButton b_cut, b_copy, b_paste,b_undo, b_redo;//, b_enregistrer, b_stop, b_play;
 	
 	public Editeur(IHM ihm){
 		super("Editeur");
@@ -92,6 +92,7 @@ public class Editeur extends JFrame implements ActionListener, MouseListener {
 		b_paste = new JButton("Coller");
 		b_paste.addActionListener(this);
 		
+		//Version 2
 		b_undo = new JButton("Undo");
 		b_undo.addActionListener(this);
 		
@@ -106,7 +107,8 @@ public class Editeur extends JFrame implements ActionListener, MouseListener {
 		
 		c.add(BorderLayout.NORTH,p_button);
 		
-		Panel p_recorder = new Panel();
+		//Version 3
+		/*Panel p_recorder = new Panel();
 		p_recorder.setLayout(new GridLayout(1,3));
 		b_enregistrer = new JButton("Enregistrer");
 		b_enregistrer.addActionListener(this);
@@ -122,7 +124,7 @@ public class Editeur extends JFrame implements ActionListener, MouseListener {
 		p_recorder.add(b_stop);
 		p_recorder.add(b_play);
 		
-		c.add(BorderLayout.SOUTH,p_recorder);
+		c.add(BorderLayout.SOUTH,p_recorder);*/
 		
 		setSize(600, 500);
 		setLocation(200, 100);

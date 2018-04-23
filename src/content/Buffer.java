@@ -122,9 +122,8 @@ public class Buffer {
 	
 	public void restoreFromMemento(Memento memento){
 		this.setContent(memento.getSavedState());
-	}
-
-	public void lire() {
+	} 
+	/*public void lire() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -137,7 +136,7 @@ public class Buffer {
 	public void stopenregistrement() {	
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 	
 	public static class Memento {
 		public final String state;
