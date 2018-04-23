@@ -2,10 +2,12 @@ package commands;
 
 import IHM.IHM;
 import content.Buffer;
+import enregistreur.Enregistreur;
 
 public class Coller implements Command {
 	Buffer bf;
 	IHM ihm;
+	Enregistreur enr;
 	
 	public Coller(Buffer bf, IHM ihm){
 		this.bf = bf;

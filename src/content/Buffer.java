@@ -14,6 +14,7 @@ public class Buffer {
 	private List<Buffer.Memento> savedStates;
 	private int currentState;
 	
+	
 	public Buffer(){
 		setContent("");
 		sl = new Select(this);
