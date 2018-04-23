@@ -13,15 +13,18 @@ public class Buffer {
 	
 	private List<Buffer.Memento> savedStates;
 	private int currentState;
+	private int lastState;
 	
-	
+
 	public Buffer(){
 		setContent("");
 		sl = new Select(this);
 		pp = new PPImpl();
 		curseur = 0;
 		savedStates = new ArrayList<Buffer.Memento>();
+		savedStates.add(new Memento(""));
 		currentState = 0;
+		lastState = 0;
 	}
 	
 	public void couper(){
@@ -32,6 +35,7 @@ public class Buffer {
 		content = str.toString();
 		savedStates.add(saveToMemento());
 		currentState++;
+		lastState = currentState;
 	}
 	
 	public void copier(){
@@ -46,6 +50,7 @@ public class Buffer {
 			setContent(str.toString());
 			savedStates.add(saveToMemento());
 			currentState++;
+			lastState = currentState;
 		}
 	}
 	
@@ -57,6 +62,7 @@ public class Buffer {
 			setContent(str.toString());
 			savedStates.add(saveToMemento());
 			currentState++;
+			lastState = currentState;
 		}
 	}
 	
@@ -105,15 +111,21 @@ public class Buffer {
 	}
 	
 	public void undo() {
-		assert(currentState > 0);
-		currentState--;
-		restoreFromMemento(savedStates.get(currentState));
+		if(currentState > 0) {
+			currentState--;
+			restoreFromMemento(savedStates.get(currentState));
+		}
+		else {
+			restoreFromMemento(savedStates.get(0));
+		}
+		
 	}
 	
 	public void redo() {
-		assert(currentState < savedStates.size());
-		currentState++;
-		restoreFromMemento(savedStates.get(currentState));
+		if(currentState < savedStates.size()) {
+			currentState++;
+			restoreFromMemento(savedStates.get(currentState));
+		}
 	}
 	
 	public Memento saveToMemento(){
@@ -123,7 +135,14 @@ public class Buffer {
 	public void restoreFromMemento(Memento memento){
 		this.setContent(memento.getSavedState());
 	} 
-	/*public void lire() {
+	
+	public int getCurrentStateNumber() {
+		return currentState;
+	}
+
+	
+	//Version 3 (WIP)
+	public void lire() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -136,7 +155,7 @@ public class Buffer {
 	public void stopenregistrement() {	
 		// TODO Auto-generated method stub
 		
-	}*/
+	}
 	
 	public static class Memento {
 		public final String state;

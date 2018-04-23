@@ -107,7 +107,7 @@ public class Editeur extends JFrame implements ActionListener, MouseListener {
 		
 		c.add(BorderLayout.NORTH,p_button);
 		
-		//Version 3
+		//Version 3 (WIP)
 		/*Panel p_recorder = new Panel();
 		p_recorder.setLayout(new GridLayout(1,3));
 		b_enregistrer = new JButton("Enregistrer");

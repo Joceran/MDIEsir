@@ -14,7 +14,7 @@ public class RejouerMacro implements Command{
 	
 	public void execute() {
 		LogCommand.logBefore("Rejouer la macro", ihm, bf);
-		//bf.lire();
+		bf.lire();
 		ihm.setTexte(bf.getContent());
 		ihm.setCurseurPosition(bf.getContent().length());
 		bf.setCurseur(ihm.getCurseurPosition());

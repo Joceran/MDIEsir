@@ -15,7 +15,7 @@ public class StopEnregistrementMacro implements Command {
 	
 	public void execute() {
 		LogCommand.logBefore("Arreter l'enregistrement", ihm, bf);
-		//bf.stopenregistrement();
+		bf.stopenregistrement();
 		LogCommand.logAfter("Arreter l'enregistrement", ihm, bf);
 		
 	}

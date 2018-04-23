@@ -24,6 +24,7 @@ public class LogCommand {
 		System.out.println("Cursor IHM   : " + prettyCursorPosition(ihm.getCurseurPosition()));
 		System.out.println("Cursor Buffer: " + prettyCursorPosition(buffer.getCurseur()));
 		System.out.println("Clipboard    : " + buffer.getClipboardContent());
+		System.out.println("Current State : "+ buffer.getCurrentStateNumber());
 	}
 	
 	private static String prettyCursorPosition(int pos) {

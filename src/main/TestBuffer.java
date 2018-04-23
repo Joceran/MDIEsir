@@ -43,7 +43,33 @@ public class TestBuffer {
 		
 	}
 	
-	//Le coller marche par extension
+	@Test
+	public void undo() {
+		bf.inserer("a");
+		bf.inserer("b");
+		bf.undo();
+		
+		assertEquals(bf.getContent(), "a");
+	}
+	
+	@Test
+	public void redo() {
+		bf.inserer("a");
+		bf.inserer("b");
+		bf.undo();
+		bf.redo();
+		
+		assertEquals(bf.getContent(), "ab");
+	}
+	
+	@Test
+	public void deplacementCurseurEtEcriture() {
+		bf.inserer("a");
+		bf.setCurseur(bf.getCurseur() - 1);
+		bf.inserer("b");
+		
+		assertEquals(bf.getContent(), "ba");
+	}
 	
 	
 
